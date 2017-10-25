@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from "redux-zero/react";
-import { addComment } from "./actions";
+import { addComment, removeComment, selectComment } from "./actions";
 import './App.css';
 
-const Comment = ({ image, name, comment }) => {
+const Comment = ({ image, name, comment, selectComment, removeComment }) => {
   return (
     <div>
-      <img src={image} className="sizeImg" />
-      <h3>{name}</h3>
-      <hr />
-      <p>{comment}</p>
+      <div className="col-md-10">
+        <img src={image} className="sizeImg" />
+        <h3>{name}</h3>
+        <hr />
+        <p>{comment}</p>
+      </div>
+      <div className="col-md-2">
+        <a className="deleteComment"
+          onClick={removeComment}>
+          Remove
+				</a>
+      </div>
     </div>
   );
 
@@ -24,6 +32,7 @@ const App = ({ comments }) => {
         image={commentUser.image}
         name={commentUser.name}
         comment={commentUser.comment}
+        removeComment={() => removeComment(index)}
       />
     );
   });
