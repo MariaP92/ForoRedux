@@ -43,7 +43,7 @@ const App = ({ comments }) => {
             <textarea className="form-control" name="addComment" id="addComment" rows="5" ref={(e) => this.commentInputRef = e}></textarea>
           </div>
           <div className="inputs">
-            <button className="btn btn-success btn-circle text-uppercase" id="submitComment"><span class="glyphicon glyphicon-send"></span> Summit comment</button>
+            <button className="btn btn-success btn-circle text-uppercase" id="submitComment"><span class="glyphicon glyphicon-send"></span> Submit comment</button>
           </div></div>
       </form>
       <div className="Comments">
